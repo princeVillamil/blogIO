@@ -1,0 +1,191 @@
+<%- include('partials/header') -%>
+
+<body>
+
+  <div class="min-h-full">
+    <nav class="bg-white-800 shadow">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <img class="h-10 w-20" src="./assets/img/blogiologo.png" alt="Your Company">
+            </div>
+            <div class="hidden md:block">
+              <div class="ml-10 flex items-baseline space-x-4">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Profile</a>
+                <a href="#" class="text-gray-600 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Feed</a>  
+              </div>
+            </div>
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-4 flex items-center md:ml-6">
+
+
+              <!-- Profile dropdown -->
+              <div class="relative ml-3">
+                <div>
+                  <button id="showBtnProfile" type="button" class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <!-- Heroicon name: outline/bars-3 -->
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                    </svg>
+                  </button>
+                </div>
+
+
+                <div id="menuProfile" class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                  <!-- Active: "bg-gray-100", Not Active: "" -->
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-700 hover:text-white" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+
+                  <a href="/logout" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-700 hover:text-white" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="-mr-2 flex md:hidden">
+            <!-- Mobile menu button -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu, show/hide based on menu state. -->
+      <div class="md:hidden" id="mobile-menu">
+        <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
+          <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+        </div>
+        <div class="border-t border-gray-700 pt-4 pb-3">
+          <div class="flex items-center px-5">
+            <div class="flex-shrink-0">
+              <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+            </div>
+            <div class="ml-3">
+              <div class="text-base font-medium leading-none text-white"><%= user.userName %></div>
+              <div class="text-sm font-medium leading-none text-gray-400 mb-3"><%= user.email %></div>
+            </div>
+
+          </div>
+          <div class="mt-3 space-y-1 px-2">
+            <!-- <a href="/feed" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Feed</a> -->
+
+            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Settings</a>
+
+            <a href="/logout" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-red-700 hover:text-white">Sign out</a>    
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+        <!-- Replace with your content -->
+
+        <div>
+          <div class="md:grid md:grid-cols-6 md:gap-6">
+            <div class="mt-5 md:col-span-2 md:mt-0">
+              <form action="#" method="POST">
+                <div class="shadow sm:overflow-hidden sm:rounded-md">
+                  <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
+                    <div>
+                      <label for="about" class="block text-sm font-medium text-gray-700">Blog title</label>
+                      <div class="mt-1">
+                        <input type="text" id="about" name="about" rows="3" class="px-1 py-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Title"></input>
+                      </div>
+                    </div>
+                    <div>
+                      <label for="about" class="block text-sm font-medium text-gray-700">Blog caption</label>
+                      <div class="mt-1">
+                        <input type="text" id="about" name="about" rows="3" class="px-1 py-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Caption..."></input>
+                      </div>
+                    </div>
+                    
+
+                    <div>
+                      <label for="about" class="block text-sm font-medium text-gray-700">Text</label>
+                      <div class="mt-1">
+                        <textarea id="about" name="about" rows="3" class="px-1 py-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Text..."></textarea>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label class="block text-sm font-medium text-gray-700">Cover photo</label>
+                      <div class="mt-1 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
+                        <div class="space-y-1 text-center">
+                          <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                            <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          <div class="flex text-sm text-gray-600">
+                            <label for="file-upload" class="relative cursor-pointer rounded-md bg-white font-medium text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:text-indigo-500">
+                              <span class="px-10">Upload a file</span>
+                              <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                            </label>
+                            <p class="pl-1"></p>
+                          </div>
+                          <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">
+                    <button type="submit" class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Save</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="md:col-span-4">
+              <div class="px-4 sm:px-0">
+                <h3 class="text-lg font-medium leading-6 text-gray-900"><%= user.userName %>'s blogs</h3>
+
+                <div class="bg-white-800 mt-3 shadow">
+                  <div class="container grid grid-cols-12 mx-auto ">
+                    <div class="bg-no-repeat bg-cover dark:bg-gray-700 col-span-full lg:col-span-4" style="background-image: url('https://source.unsplash.com/random/640x480'); background-position: center center; background-blend-mode: multiply; background-size: cover;"></div>
+                    <div class="flex flex-col p-6 col-span-full row-span-full lg:col-span-8 lg:p-10">
+                      <h1 class="text-3xl font-semibold">Lorem ipsum dolor sit.</h1>
+                      <p class="flex-1 pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, reprehenderit adipisci tempore voluptas laborum quod.</p>
+                      <a rel="noopener noreferrer" href="#" class="inline-flex items-center pt-2 pb-6 space-x-2 text-sm dark:text-violet-400">
+                        <span>Read more</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                          <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                      </a>
+                      <div class="flex items-center justify-between pt-2">
+                        <div class="flex space-x-2">
+                          <!-- <span class="self-center text-sm">by Leroy Jenkins</span> -->
+                          <form
+                            action="/post/deletePost/?_method=DELETE"
+                            method="POST"
+                            class="self-center text-sm"
+                          >
+                            <button type="submit" class="inline-flex items-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium rounded-md">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                              </svg>
+                            
+                              Delete
+                            </button>
+                          </form>
+                        </div>
+                        <span class="text-xs">10 : Likes</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- /End replace -->
+      </div>
+    </main>
+  </div>
+  <script src="./profile.js"></script>
+
+</body>
+<%- include('partials/footer') -%>
