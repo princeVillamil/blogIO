@@ -4,7 +4,16 @@ const mongoose = require('mongoose')
 const UserSchema = new mongoose.Schema({
   userName: { type: String, unique: true },
   email: { type: String, unique: true },
+  image: {
+    type: String,
+    default: 'https://www.nicepng.com/png/detail/202-2024580_png-file-profile-icon-vector-png.png',
+  },
+  cloudinaryId: {
+    type: String,
+    require: true,
+  },
   password: String,
+  
 })
 
 // Password HASH middleware
