@@ -8,10 +8,6 @@ const UserSchema = new mongoose.Schema({
     type: String,
     default: 'https://www.nicepng.com/png/detail/202-2024580_png-file-profile-icon-vector-png.png',
   },
-  cloudinaryId: {
-    type: String,
-    require: true,
-  },
   password: String,
   
 })

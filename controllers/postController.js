@@ -13,6 +13,19 @@ module.exports = {
       console.log(err)
     }
   },
+  getUserProfile: async (req, res)=>{
+    try {
+      const User = await UserModel.find({_id: req.params.id})
+      const allUserPost = await PostModel.find({user: User[0].id})
+      if(User[0].id == req.user.id) return res.redirect("/profile")
+      // console.log(allUserPost)
+      
+      res.render("userInfo.ejs", {user: req.user, userProfile: User, posts: allUserPost})
+      // res.send('hello')
+    } catch (err) {
+      console.log(err)
+    }
+  },
   getFeed: async (req, res)=>{
     try {
       const posts = await PostModel.find().sort({createdAt: 'desc'}).lean()
