@@ -1,11 +1,9 @@
-# Jobby (In progress)
+# BlogIO
 
-A full stack, task / ticket manager based around JIRA.
-Note: Currently in progress. Nearly completed. Some styling issues and a little rafactoring remains.  
+A full stack, blog / tweet app that anyone can see.
+Completed but could be better
 
-Link to my initial design: https://xd.adobe.com/view/00f89d78-609e-49c1-8902-03b24dc1918f-55ab/. 
-
-![alt text](https://github.com/RussellCarey/Jobby-Main/raw/master/Design/jobbygiff.gif)
+![alt text](./assets/blogio.gif)
 
 ## Table of contents
 
@@ -21,43 +19,39 @@ Link to my initial design: https://xd.adobe.com/view/00f89d78-609e-49c1-8902-03b
 
 - React
 - Node.js / Express
-- Typescript
-- TypeORM
-- Github Actions
-- Styled Components
-- Nginx
-- Axios
+- JS
+- Passport
+- Github 
+- Ejs
+- MongoDB
+- MVC
+- Coudinary
 - etc..
 
 ## Languages
 
-- JavaScript / Typescript
+- JavaScript
 
 ## Features
 
 Users can:
 
-- Created jobs
-- Assign jobs to other members
-- Create and join projects
-- Edit tasks
-- Delete tasks
-- Account functions such as; change password etc
-- Drag and drop tasks to move them
-- Mobile responsive
-- More comming
-
-![alt text](https://github.com/RussellCarey/Jobby-Client/raw/master/Design/ss2.png)
-![alt text](https://github.com/RussellCarey/Jobby-Client/raw/master/Design/ss4.png)
+- Created Blog post
+- Likes post
+- Create an account
+- Login at anytime with saved cookies
+- Delete blogs
+- Like blogs
 
 ## Status
 
-Project is: In progress. Nearly finished.
+Finished.
+But could be better.
 
 ## Inspiration
 
-Project was created so I could create a more complex front end.
+Project was created so I could create/practice a complex front end and use MVC architectural.
 
 ## Contact
 
-Created by [@RussellCarey](https://twitter.com/russellcareyy) - feel free to contact me about the project
+Created by [@princeVillamil](https://twitter.com/reactJaMo) - feel free to contact me about the project
